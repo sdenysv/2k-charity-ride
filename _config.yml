@@ -1,0 +1,24 @@
+title: "2k charity ride"
+description: "Stories and updates from the 2k charity ride."
+url: "https://sdenysv.github.io"
+baseurl: "/2k-charity-ride"
+lang: "en"
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+header_pages:
+  - about.md
+
+permalink: /:categories/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
