@@ -6,6 +6,9 @@ lang: "en"
 
 theme: minima
 
+sass:
+  quiet_deps: true
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

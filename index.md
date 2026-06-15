@@ -17,6 +17,22 @@ layout: home
 {% assign total_secs = rem | modulo: 60 %}
 {% assign avg_speed = total_distance | times: 3600.0 | divided_by: total_seconds %}
 
+# Hello! 
+
+I’m Denys, and this is my story “how I spent my summer vacation 2023”.
+
+![Denys on the bike](/assets/images/cover.jpg)
+
+I took a vacation from work and rode my bike from Maastricht, Netherlands to Andermatt, Switzerland and back. Why? To raise money for kids in Ukraine, but also to have adventure, see new places, and challenge myself.
+
+I rode 2,000 km in 18 days, and raised €2,000. I met amazing people, had injuries, and every second day I was asking myself “Why am I doing this?”. But I made it, we made it, and I’m proud of us.
+
+It wouldn’t be possible without the support of my family, friends, and all the donors. 
+
+Thank you!
+
+## Stats for nerds
+
 | Metric | Value |
 | --- | --- |
 | Raised | €2,000 |
