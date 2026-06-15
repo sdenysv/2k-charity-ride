@@ -21,7 +21,7 @@ layout: home
 
 I’m Denys, and this is my story “how I spent my summer vacation 2023”.
 
-![Denys on the bike](/assets/images/cover.jpg)
+![Denys on the bike]({{ "/assets/images/cover.jpg" | relative_url }})
 
 I took a vacation from work and rode my bike from Maastricht, Netherlands to Andermatt, Switzerland and back. Why? To raise money for kids in Ukraine, but also to have adventure, see new places, and challenge myself.
 
