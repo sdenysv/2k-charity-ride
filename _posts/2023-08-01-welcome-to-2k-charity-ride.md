@@ -6,6 +6,7 @@ categories: updates
 distance: 116.56
 elevation: 512
 moving_time_s: 23608
+gpx: /assets/gpx/day-1.gpx
 ---
 
 

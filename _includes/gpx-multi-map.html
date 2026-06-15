@@ -1,0 +1,39 @@
+{% assign map_height = include.height | default: '500px' %}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<div id="gpx-multi-map" style="height: {{ map_height }}; width: 100%; border: 1px solid #d9d9d9; border-radius: 10px;"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet-gpx@1.7.0/gpx.js"></script>
+<script>
+(function () {
+  var mapEl = document.getElementById("gpx-multi-map");
+  if (!mapEl || typeof L === "undefined" || typeof L.GPX === "undefined") return;
+
+  var gpxUrls = [
+    {% for post in site.posts reversed %}{% if post.gpx %}"{{ post.gpx | relative_url }}",{% endif %}{% endfor %}
+  ];
+
+  var map = L.map("gpx-multi-map");
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  var bounds = L.latLngBounds();
+  var loaded = 0;
+
+  gpxUrls.forEach(function (url) {
+    new L.GPX(url, {
+      async: true,
+      marker_options: { startIconUrl: null, endIconUrl: null, shadowUrl: null, wptIcons: {} }
+    })
+    .on("loaded", function (e) {
+      bounds.extend(e.target.getBounds());
+      loaded++;
+      if (loaded === gpxUrls.length) map.fitBounds(bounds);
+    })
+    .addTo(map);
+  });
+})();
+</script>

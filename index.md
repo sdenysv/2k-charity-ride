@@ -40,3 +40,7 @@ Thank you!
 | Distance | {{ total_distance | round: 2 }} km |
 | Elevation | {{ total_elevation }} m |
 | Average speed | {{ avg_speed | round: 1 }} km/h |
+
+## Map of the route
+
+{% include gpx-multi-map.html %}
