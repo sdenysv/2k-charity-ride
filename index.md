@@ -17,6 +17,10 @@ layout: home
 {% assign total_secs = rem | modulo: 60 %}
 {% assign avg_speed = total_distance | times: 3600.0 | divided_by: total_seconds %}
 
-| Raised | Days | Distance | Elevation | Average speed |
-| --- | --- | --- | --- | --- |
-| €2,000 | 18 | {{ total_distance | round: 2 }} km | {{ total_elevation }} m | {{ avg_speed | round: 1 }} km/h |
+| Metric | Value |
+| --- | --- |
+| Raised | €2,000 |
+| Days | 18 |
+| Distance | {{ total_distance | round: 2 }} km |
+| Elevation | {{ total_elevation }} m |
+| Average speed | {{ avg_speed | round: 1 }} km/h |
